@@ -5,11 +5,10 @@ excerpt: 'We will look at 10 simple tips and tricks on writing unit tests in Jav
 cover_image: '/images/posts/img7.jpg'
 category: 'JavaScript'
 author: 'John Doe'
-author_image: 'https://randomuser.me/api/portraits/men/11.jpg'
+author_image: 'https://randomuser.me/api/portraits/men/34.jpg'
 ---
 
 <!-- Markdow generator - https://jaspervdj.be/lorem-markdownum/ -->
-
 
 Lorem [markdownum](http://insunt.org/inpositaque), et sanguine rutilos dixit
 nigro cornu genus duris linguae. Super hic deus ego adveniens nullumque Venerem
