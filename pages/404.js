@@ -1,11 +1,10 @@
 //@ts-check
-import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '../component/Layout'
 
 export default function NotFoundPage() {
   return (
-    <Layout title='Page Not Founf'>
+    <Layout title='Page Not Found'>
       <div className='flex flex-col items-center mt-20'>
         <Image
           src='/images/logo.png'
