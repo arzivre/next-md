@@ -11,10 +11,10 @@
       ],
       "@/utils/*": [
         "utils/*"
+      ],
+      "@/lib/*": [
+        "lib/*"
       ]
     }
   },
-  "exclude": [
-    "node_modules"
-  ]
 }
