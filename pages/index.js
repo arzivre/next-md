@@ -1,11 +1,12 @@
 //@ts-check
+import React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import Link from 'next/link'
-import Layout from '../component/Layout'
-import Post from '../component/Post'
-import { sortByDate } from '../utils'
+import Layout from '@/components/Layout'
+import Post from '@/components/Post'
+import { sortByDate } from '@/utils/index'
 
 export default function HomePage({ posts }) {
   return (

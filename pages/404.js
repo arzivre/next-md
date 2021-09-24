@@ -1,6 +1,7 @@
 //@ts-check
+import React from 'react'
 import Image from 'next/image'
-import Layout from '../component/Layout'
+import Layout from '@/components/Layout'
 
 export default function NotFoundPage() {
   return (

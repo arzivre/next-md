@@ -1,12 +1,13 @@
 //@ts-check
+import React from 'react'
 import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
 import Image from 'next/image'
 import matter from 'gray-matter'
 import marked from 'marked'
-import Layout from '../../component/Layout'
-import CategoryLabel from '../../component/CategoryLabel'
+import Layout from '@/components/Layout'
+import CategoryLabel from '@/components/CategoryLabel'
 
 export default function PostPage({
   frontmatter: { title, category, date, cover_image, author, author_image },

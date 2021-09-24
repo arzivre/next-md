@@ -1,5 +1,6 @@
 //@ts-check
-import Layout from '../component/Layout'
+import React from 'react'
+import Layout from '@/components/Layout'
 
 export default function about() {
   return (
