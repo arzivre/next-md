@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import path from 'path'
 import Layout from '../../../component/Layout'
 import Post from '../../../component/Post'
+import Pagination from '../../../component/Pagination'
 import { sortByDate } from '../../../utils'
 import { POSTS_PER_PAGE } from '../../../config'
 export default function BlogPage({ posts, numPages, currentPage }) {
@@ -16,6 +17,8 @@ export default function BlogPage({ posts, numPages, currentPage }) {
           <Post key={index} post={post} />
         ))}
       </div>
+
+      <Pagination currentPage={currentPage} numPages={numPages}/>
     </Layout>
   )
 }

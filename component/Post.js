@@ -22,7 +22,7 @@ export default function Post({ post }) {
       </div>
 
       <div className='mt-2'>
-        <Link href={`/blog/${post.slug}`}>
+        <Link href={`/blog/${post.slug}`} passHref>
           <a className='text-2xl text-gray-700 font-bold hover:underline'>
             {post.frontmatter.title}
           </a>
@@ -31,7 +31,7 @@ export default function Post({ post }) {
       </div>
 
       <div className='flex justify-between items-center mt-6'>
-        <Link href={`/blog/${post.slug}`}>
+        <Link href={`/blog/${post.slug}`} passHref>
           <a className='text-gray-900 hover:text-blue-600'>Read More</a>
         </Link>
         <div className='flex items-center'>
