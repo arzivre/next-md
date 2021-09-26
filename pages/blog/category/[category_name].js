@@ -6,18 +6,29 @@ import path from 'path'
 
 import Layout from '@/components/Layout'
 import Post from '@/components/Post'
+import CategoryList from '@/components/CategoryList'
+
 import { getPosts } from '@/lib/posts'
 
-export default function CategoryBlogPage({ posts, categoryName }) {
+export default function CategoryBlogPage({ posts, categoryName, categories }) {
   return (
     <Layout>
-      <h1 className='text-5xl border-b-4 p-5 font-bold'>
-        Post in {categoryName}
-      </h1>
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
-        {posts.map((post, index) => (
-          <Post key={index} post={post} />
-        ))}
+      <div className='flex justify-between'>
+        <div className='w-3/4 mr-10'>
+          <h1 className='text-5xl border-b-4 p-5 font-bold'>
+            Post in {categoryName}
+          </h1>
+
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
+            {posts.map((post, index) => (
+              <Post key={index} post={post} />
+            ))}
+          </div>
+        </div>
+
+        <div className='w-1/4'>
+          <CategoryList categories={categories} />
+        </div>
       </div>
     </Layout>
   )
@@ -50,6 +61,11 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { category_name } }) {
   const posts = getPosts()
 
+  //* Get categories for sidebar
+  const categories = posts.map((post) => post.frontmatter.category)
+  // @ts-ignore
+  const uniqueCategories = [...new Set(categories)]
+
   //* filter post by category
   const categoryPosts = posts.filter(
     (post) => post.frontmatter.category.toLowerCase() === category_name
@@ -59,6 +75,7 @@ export async function getStaticProps({ params: { category_name } }) {
     props: {
       posts: categoryPosts.slice(0, 6),
       categoryName: category_name,
+      categories: uniqueCategories,
     },
   }
 }
