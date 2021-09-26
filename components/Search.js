@@ -3,8 +3,23 @@ import React, { useState, useEffect } from 'react'
 import { FaSearch } from 'react-icons/fa'
 
 export default function Search() {
-  const [searcTerm, setSearchTerm] = useState('')
-  const [searcResults, setSearchResults] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
+  const [searchResults, setSearchResults] = useState([])
+
+  useEffect(() => {
+    const getResults = async () => {
+      if (searchTerm === '') {
+        setSearchResults([])
+      } else {
+        const res = await fetch(`/api/search?q=${searchTerm}`)
+        const { results } = await res.json()
+        setSearchResults(results)
+      }
+    }
+
+    getResults()
+  }, [searchTerm])
+
   return (
     <div className='relative bg-gray-600 p-4'>
       <div className='container mx-auto flex items-center justify-center md:justify-end'>
@@ -16,7 +31,7 @@ export default function Search() {
               id='search'
               className='
             bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none w-72'
-              value={searcTerm}
+              value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder='search'
             />
