@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'

@@ -1,7 +1,7 @@
 //@ts-check
 import React from 'react'
 import Link from 'next/link'
-import Search from './NewSearch'
+import Search from './Search/Search'
 
 export default function Header() {
   return (
@@ -50,7 +50,6 @@ export default function Header() {
                 About Me
               </a>
             </Link>
-
             <Search />
           </div>
         </div>
