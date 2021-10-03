@@ -11,12 +11,11 @@ export default function Header() {
         <div className='lg:flex lg:items-center'>
           <div className='flex items-center justify-between'>
             <div>
-              <a
-                className='text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300'
-                href='#'
-              >
-                Arzivre
-              </a>
+              <Link href='/'>
+                <a className='text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300'>
+                  Arzivre
+                </a>
+              </Link>
             </div>
 
             {/* <!-- Mobile menu button --> */}
@@ -37,6 +36,11 @@ export default function Header() {
           </div>
 
           <div className='flex flex-col text-gray-600 capitalize dark:text-gray-300 lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center'>
+            <Link href='/'>
+              <a className='mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200'>
+                Home
+              </a>
+            </Link>
             <Link href='/blog'>
               <a className='mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200'>
                 Blog
@@ -44,29 +48,11 @@ export default function Header() {
             </Link>
             <Link href='/about'>
               <a className='mt-2 lg:mt-0 lg:mx-4 hover:text-gray-800 dark:hover:text-gray-200'>
-                About
+                About Me
               </a>
             </Link>
 
-            <div className='relative mt-4 lg:mt-0 lg:mx-4'>
-              <span className='absolute inset-y-0 left-0 flex items-center pl-3'>
-                <svg
-                  className='w-4 h-4 text-gray-600 dark:text-gray-300'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                >
-                  <path
-                    d='M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z'
-                    stroke='currentColor'
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  ></path>
-                </svg>
-              </span>
-
-              <Search />
-            </div>
+            <Search />
           </div>
         </div>
 
