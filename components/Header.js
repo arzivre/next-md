@@ -1,8 +1,7 @@
 //@ts-check
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import Search from './Search'
+import Search from './NewSearch'
 
 export default function Header() {
   return (
