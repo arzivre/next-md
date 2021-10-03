@@ -7,8 +7,8 @@ export default function handler(req, res) {
   let posts
 
   if (process.env.NODE_ENV === 'production') {
-    //TODO: - fetch from cache
-    // posts = require('../../cache/data').posts
+    //* Fetch from cache
+    posts = require('../../cache/data').posts
   } else {
     const files = fs.readdirSync(path.join('posts'))
 
@@ -29,6 +29,7 @@ export default function handler(req, res) {
     })
   }
 
+  // @ts-ignore
   const results = posts.filter(
     ({ frontmmater: { title, excerpt, category } }) =>
       title.toLowerCase().indexOf(req.query.q) !== -1 ||
