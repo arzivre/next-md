@@ -12,7 +12,7 @@ export default function HomePage({ posts }) {
       <h1 className='text-5xl border-b-4 p-5 font-bold'>Latest Post</h1>
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
         {posts.map((post, index) => (
-          <Post key={index} post={post} />
+          <Post key={index} post={post} compact={false} />
         ))}
       </div>
       <Link href='/blog' passHref>
