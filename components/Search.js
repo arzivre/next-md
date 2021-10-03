@@ -1,6 +1,6 @@
 //@ts-check
 import React, { useState, useEffect } from 'react'
-import { FaSearch } from 'react-icons/fa'
+// import { FaSearch } from 'react-icons/fa'
 
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -35,7 +35,7 @@ export default function Search() {
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder='search'
             />
-            <FaSearch className='absolute top-0 right-0 text-black mt-3 mr-4' />
+            {/* <FaSearch className='absolute top-0 right-0 text-black mt-3 mr-4' /> */}
           </form>
         </div>
       </div>
